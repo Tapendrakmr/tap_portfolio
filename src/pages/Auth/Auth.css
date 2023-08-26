@@ -10,6 +10,7 @@
   width: 60%;
   margin: auto;
   border: 3px solid #73ad21;
+  align-items: center;
 }
 .authType {
   display: flex;

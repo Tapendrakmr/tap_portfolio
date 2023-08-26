@@ -33,12 +33,6 @@ const Auth = () => {
         <div className="container">
           {activeTab === "signIn" && <SignIn />}
           {activeTab === "signUp" && <SignUp />}
-          {/* <div className="signInForm">
-            <SignIn />
-          </div>
-          <div className="singUpForm">
-            <SignUp />
-          </div> */}
         </div>
       </div>
     </div>
