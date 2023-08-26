@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./SignIn.css";
 const SignIn = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,6 +19,7 @@ const SignIn = () => {
       password: password,
     };
     console.log("reqObje", reqObj);
+    navigate("/userDetail");
   };
   return (
     <div>

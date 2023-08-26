@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 const SignUp = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -22,6 +24,7 @@ const SignUp = () => {
       password,
     };
     console.log("reqOj", reqObj);
+    navigate("/userDetail");
   };
   return (
     <div>

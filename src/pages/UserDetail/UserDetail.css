@@ -1,0 +1,31 @@
+.userDetail {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  top: 0;
+  width: 100%;
+  min-height: 99vh;
+}
+.userCompleteDetail {
+  color: white;
+  width: 65%;
+  margin: auto;
+  border: 3px solid #73ad21;
+  align-items: center;
+}
+.types {
+  display: flex;
+}
+
+.types span {
+  flex: 1; /* Distribute available space equally */
+  border: 1px solid gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.types span.active {
+  background-color: #007bff;
+}
