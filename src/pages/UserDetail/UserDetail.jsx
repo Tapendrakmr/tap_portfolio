@@ -1,7 +1,13 @@
 import { useState } from "react";
+import Profile from "../../components/Profile/Profile";
+import Education from "../../components/Education/Education";
+import Experience from "../../components/Experience/Experience";
+import Achievment from "../../components/Achievment/Achievment";
+import Projects from "../../components/Projects/Projects";
+import Skills from "../../components/Skills/Skills";
 import "./UserDetail.css";
 const UserDetail = () => {
-  const [activeTab, setActivateTab] = useState("education");
+  const [activeTab, setActivateTab] = useState("profile");
   const handleTabClick = (tab) => {
     setActivateTab(tab);
   };
@@ -9,6 +15,14 @@ const UserDetail = () => {
     <div className="userDetail">
       <div className="userCompleteDetail">
         <div className="types">
+          <span
+            className={`profile ${activeTab == "profile" ? "active" : ""}`}
+            onClick={() => {
+              handleTabClick("profile");
+            }}
+          >
+            Profile
+          </span>
           <span
             className={`education ${activeTab == "education" ? "active" : ""}`}
             onClick={() => {
@@ -56,11 +70,12 @@ const UserDetail = () => {
         </div>
 
         <div className="container">
-          {activeTab === "education" && <h1>education</h1>}
-          {activeTab === "experience" && <h1>experience</h1>}
-          {activeTab === "skills" && <h1>skills</h1>}
-          {activeTab === "projects" && <h1>projects</h1>}
-          {activeTab === "achievement" && <h1>achievement</h1>}
+          {activeTab === "profile" && <Profile />}
+          {activeTab === "education" && <Education />}
+          {activeTab === "experience" && <Experience />}
+          {activeTab === "skills" && <Skills />}
+          {activeTab === "projects" && <Projects />}
+          {activeTab === "achievement" && <Achievment />}
         </div>
       </div>
     </div>
