@@ -1,28 +1,41 @@
 import { useState } from "react";
 import FormContainer from "./FormContainer/FormContainer";
 const Education = () => {
-  const [formContainers, setFormContainers] = useState([]);
-
-  const addFormContainer = () => {
+  const [formContainers, setFormContainers] = useState([
+    {
+      id: Math.random(),
+    },
+  ]);
+  const addFormContainer = (id) => {
     setFormContainers([
       ...formContainers,
-      <FormContainer
-        key={formContainers.length}
-        onRemove={() => removeFormContainer(formContainers.length)}
-      />,
+      {
+        id: id,
+      },
     ]);
   };
   const removeFormContainer = (index) => {
-    const updatedContainers = formContainers.filter((_, i) => i !== index);
+    const updatedContainers = formContainers.filter((x) => x.id != index);
+
     setFormContainers(updatedContainers);
   };
 
   return (
     <div>
       <div className="container">
-        <button onClick={addFormContainer}>Add Form</button>
+        <button onClick={() => addFormContainer(Math.random())}>
+          Add Form
+        </button>
         {formContainers.map((FormContainerComponent, index) => (
-          <div key={index}>{FormContainerComponent}</div>
+          <div key={index}>
+            {
+              <FormContainer
+                key={FormContainerComponent.id}
+                key2={FormContainerComponent.id}
+                onRemove={(id) => removeFormContainer(id)}
+              />
+            }
+          </div>
         ))}
       </div>
 

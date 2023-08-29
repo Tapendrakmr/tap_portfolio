@@ -1,9 +1,9 @@
 // eslint-disable-next-line react/prop-types
-const FormContainer = ({ onRemove }) => {
+const FormContainer = ({ key2, onRemove }) => {
   return (
     <div className="education">
       <div className="collegeName">
-        <label htmlFor="collegeName">College Name</label>
+        <label htmlFor="collegeName">College Name,{key2}</label>
         <input
           type="text"
           id="collegeName"
@@ -22,7 +22,7 @@ const FormContainer = ({ onRemove }) => {
         <input type="date" />
         <input type="date" />
       </div>
-      <button onClick={onRemove}>Remove education</button>
+      <button onClick={() => onRemove(key2)}>Remove education</button>
     </div>
   );
 };
