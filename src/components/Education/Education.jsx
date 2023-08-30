@@ -23,9 +23,6 @@ const Education = () => {
   return (
     <div>
       <div className="container">
-        <button onClick={() => addFormContainer(Math.random())}>
-          Add Form
-        </button>
         {formContainers.map((FormContainerComponent, index) => (
           <div key={index}>
             {
@@ -38,10 +35,10 @@ const Education = () => {
           </div>
         ))}
       </div>
-
-      {/* <div className="submitBtn">
+      <button onClick={() => addFormContainer(Math.random())}>Add Form</button>
+      <div className="submitBtn">
         <input type="submit" />
-      </div> */}
+      </div>
     </div>
   );
 };
